@@ -85,14 +85,22 @@ def render_response():
         
     if gryffindor > slytherin and gryffindor > ravenclaw and gryffindor > hufflepuff:
         house = "Gryffindor"
+        picture = "static/gryffindor.jpg"
+        altText = "Gryffindor"
     elif slytherin > gryffindor and slytherin > ravenclaw and slytherin > hufflepuff:
         house = "Slytherin"
+        picture = "static/slytherin.jpg"
+        altText = "Slytherin"
     elif ravenclaw > gryffindor and ravenclaw > slytherin and ravenclaw > hufflepuff:
         house = "Ravenclaw"
+        picture = "static/ravenclaw.jpg"
+        altText = "Ravenclaw"
     else:
         house = "Hufflepuff"
+        picture = "static/hufflepuff.jpg"
+        altText = "Hufflepuff"
         
-    return render_template("response.html", answer = house)
+    return render_template("response.html", answer = house, image = picture, alt = altText)
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=False)

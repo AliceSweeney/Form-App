@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Your Harry Potter House</title>
-	</head>
-	<body>
-		<h1>Your Harry Potter House is...</h1>
-		<p>{{ answer }}</p>
-	</body>
-</html>
+{% extends "layout.html" %}
+
+{% set active_page = "home" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	<h1>Your Harry Potter House is...</h1>
+	<p class="response">{{ answer }}</p>
+	<img src="{{ image }}" alt="{{ alt }}" class="rounded" id="responseImg">
+{% endblock %}
